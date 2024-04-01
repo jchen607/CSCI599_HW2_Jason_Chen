@@ -323,7 +323,8 @@ class SFM(object):
 
                 if len(matches) > 0: 
                     # TODO: Process the new view
-                    pass
+                    self.baseline_pose_estimation(prev_name, name)
+                    self.triangulate_two_views(prev_name, name) # triangulate the points from the new view with a previous view
                 else: 
                     print('skipping {} and {}'.format(prev_name, name))
         
